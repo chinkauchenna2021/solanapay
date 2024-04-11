@@ -14,7 +14,7 @@ export default function Page() {
 
     const handleGenerateClick = async () => {
         // 1 - Send a POST request to our backend and log the response URL
-        const res = await axios.post('http://localhost:3000/api/solanapay');
+        const res = await axios.post('https://solanapay.onrender.com/api/solanapay');
         console.log(res)
         const { url, ref } = await res.data;
         // console.log(url)
@@ -41,7 +41,7 @@ export default function Page() {
       return;
     }
     // 2 - Send a GET request to our backend and return the response status
-    const res = await axios.get(`http://localhost:3000/api/solanapay?reference=${reference}`);
+    const res = await axios.get(`https://solanapay.onrender.com/api/solanapay?reference=${reference}`);
     const { status } = await res.data;
 
     // 3 - Alert the user if the transaction was verified or not and reset the QR code and reference

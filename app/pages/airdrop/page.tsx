@@ -4,7 +4,7 @@ import React  , {useState} from "react";
 import Link from 'next/link'
 import  { Connection, clusterApiUrl , Keypair, LAMPORTS_PER_SOL , PublicKey } from '@solana/web3.js';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const quicknodeEndpoint = 'https://api.devnet.solana.com'; // Replace with your QuickNode endpoint
 
