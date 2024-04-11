@@ -3,6 +3,8 @@
 import React  , {useState} from "react";
 import Link from 'next/link'
 import  { Connection, clusterApiUrl , Keypair, LAMPORTS_PER_SOL , PublicKey } from '@solana/web3.js';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const quicknodeEndpoint = 'https://api.devnet.solana.com'; // Replace with your QuickNode endpoint
 
@@ -17,6 +19,8 @@ const getAirdrop =  async()=>{
     const recipientPublicKey = new PublicKey(getAddress);
     const lamports = LAMPORTS_PER_SOL * getAmount // 1 SOL = 1,000,000,000 lamports
       connection.requestAirdrop(recipientPublicKey, lamports).then(transactionSignature => {
+        const link = "https://solscan.io/account/"+getAddress;
+     toast(`${getAmount} SOL have been sent to your address  ${<a href={link}>{"check on solscan"}</a>}`);
         console.log('Airdrop transaction successful:', transactionSignature);
     }).catch(error => {
         console.error('Airdrop transaction failed:', error);
@@ -37,6 +41,7 @@ const getAirdrop =  async()=>{
                  <button onClick={getAirdrop} className="border-none h-8 w-full bg-green-50 text-green-900 ">Claim</button>
               </div>  
         </div>
+        <ToastContainer />
     </div>
   );
 }
