@@ -1,29 +1,14 @@
 'use client'
 
-import React from 'react'
+import React , {useState} from 'react'
 import Link  from 'next/link'
-import { RampInstantSDK } from "@ramp-network/ramp-instant-sdk"
 import { ToastContainer, toast } from 'react-toastify';
+import RampModal from '@/app/components/ui/modal/RampModal';
 
 function page() {
+const [showRamp , setShowRamp] = useState(false)
 const buy = ()=>{
-   try{
-    new RampInstantSDK({
-        hostAppName: 'Bluedill APP',
-        hostLogoUrl: '/images/test-logo-ramp.png',
-        hostApiKey: "vpkbydq452etx3pw8oeeh5ug3wqzmb7ub8h8qg35",
-        defaultAsset: 'SOLANA_USDC',
-      }).show().on('*', (event: {type:string}) => {
-        if ((event.type as string) === 'PURCHASE_SUCCESS') {
-          toast.success("Success !. Your USDC have been purchased successfully");
-        } else if ((event.type as string) === 'PURCHASE_FAILED') {
-          toast.success('Purchase failed');
-        }
-      });
-
-   }catch(err){
-
-   }
+setShowRamp(true)
 
 }
 
@@ -31,15 +16,18 @@ const buy = ()=>{
 
   return (
     <div className='container w-full h-screen justify-center flex items-center'>
-       <div  className='w-3/6'>
+       <div  className='w-5/6 h-full'>
               <div className='w-full h-fit py-2 flex justify-end'>
-                <Link className='text-slate-600' href={'/'}>Home</Link>
+                <Link className='text-white bg-gray-700 p-2' href={'/'}>Home</Link>
               </div>
-              <div  className='w-full h-full justify-center items-center'>
+              <div  className='w-full h-screen justify-center items-center'>
                  <button onClick={buy}  className='w-fit h-fit p-2 border bg-slate-700 text-white text-2xl tracking-wide flex justify-center items-center'>
                     Buy from Bluedil Ramp 
                  </button>
-
+               {
+                showRamp &&  <RampModal reset={setShowRamp} />
+                
+               }
               </div>
        </div>
        <ToastContainer />
