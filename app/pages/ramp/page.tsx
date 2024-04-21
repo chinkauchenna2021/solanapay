@@ -5,7 +5,7 @@ import Link  from 'next/link'
 import { ToastContainer, toast } from 'react-toastify';
 import RampModal from '@/app/components/ui/modal/RampModal';
 
-function page() {
+function Page() {
 const [showRamp , setShowRamp] = useState(false)
 const buy = ()=>{
 setShowRamp(true)
@@ -35,4 +35,4 @@ setShowRamp(true)
   )
 }
 
-export default page
+export default Page
