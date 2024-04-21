@@ -65,8 +65,8 @@ export default function Page() {
       <main className="flex min-h-screen flex-col items-center justify-between p-24">
         <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
           <h1 className='text-sm font-semibold'>Bluedill Solana Pay Demo</h1>
-            <div className='text-sm text-pink-900 font-semibold cursor-pointer bg-pink-100 px-4 py-2 rounded-sm'><Link href={'/pages/airdrop/'}>Get Airdrop</Link></div>
-            <div className='text-sm text-pink-900 font-semibold cursor-pointer bg-pink-100 px-4 py-2 rounded-sm'><Link href={'/pages/ramp/'}>Buy From Ramp</Link></div>  
+            <div className='my-2 text-sm text-pink-900 font-semibold cursor-pointer bg-pink-100 px-4 py-2 rounded-sm'><Link href={'/pages/airdrop/'}>Get Airdrop</Link></div>
+            <div className='my-2 text-sm text-pink-900 font-semibold cursor-pointer bg-pink-100 px-4 py-2 rounded-sm'><Link href={'/pages/ramp/'}>Buy From Ramp</Link></div>  
         </div>
         {qrCode? (
           <Image
