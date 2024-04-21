@@ -7,7 +7,7 @@ function page() {
 const buy = ()=>{
    try{
     new RampInstantSDK({
-        hostAppName: 'SKYTRADE APP',
+        hostAppName: 'Bluedill APP',
         hostLogoUrl: '/images/test-logo-ramp.png',
         hostApiKey: "vpkbydq452etx3pw8oeeh5ug3wqzmb7ub8h8qg35",
         defaultAsset: 'SOLANA_USDC',
