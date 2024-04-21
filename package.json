@@ -15,10 +15,12 @@
     "@types/bignumber.js": "^5.0.0",
     "axios": "^1.6.8",
     "bignumber.js": "^9.1.2",
+    "magic-sdk": "^28.0.3",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
-    "react-toastify": "^10.0.5"
+    "react-toastify": "^10.0.5",
+    "web3": "^4.8.0"
   },
   "devDependencies": {
     "@types/node": "^20",
