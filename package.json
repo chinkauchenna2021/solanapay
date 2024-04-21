@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ramp-network/ramp-instant-sdk": "^4.0.5",
     "@solana/pay": "^0.2.5",
     "@solana/web3.js": "^1.91.4",
     "@types/bignumber.js": "^5.0.0",
